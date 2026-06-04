@@ -1,0 +1,772 @@
+/* ── RESET ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── VARIABLES ─────────────────────────────────── */
+:root {
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'EB Garamond', serif;
+  --sidebar-w: 210px;
+  --bg-sidebar: #FFF8DE;
+  --bg-main: #FFF8DE;
+  --text-dark: #1c1c1c;
+  --text-mid: #444;
+  --accent: #013E37;
+}
+
+/* ── BASE ──────────────────────────────────────── */
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-main);
+  color: var(--text-dark);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ───────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 0 2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ── LOGO ──────────────────────────────────────── */
+.sidebar-logo {
+  padding: 0 1.4rem 1.8rem 1.4rem;
+}
+
+/* SVG logo sizing */
+.logo-svg {
+  width: 72px;
+  height: auto;
+  display: block;
+}
+
+/* Image logo sizing — used when you swap in a real image */
+.logo-img {
+  width: 72px;
+  height: auto;
+  display: block;
+}
+
+/* ── NAV GROUP ─────────────────────────────────── */
+.nav-group {
+  width: 100%;
+}
+
+/* Group label / toggle button */
+.nav-group-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Highlight group label when a child page is active */
+.nav-group-toggle.group-active {
+  color: #013E37;;
+}
+
+/* Chevron icon */
+.nav-group-toggle .chevron svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate chevron when collapsed */
+.nav-group:not(.open) .chevron svg {
+  transform: rotate(-90deg);
+}
+
+/* Hide items when collapsed */
+.nav-group:not(.open) .nav-group-items {
+  display: none;
+}
+
+/* ── NAV LINKS ─────────────────────────────────── */
+.nav-group-items {
+  list-style: none;
+}
+
+.nav-group-items li a {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  text-decoration: none;
+  padding: 0.3rem 1.4rem 0.3rem 2.4rem;
+  transition: color 0.12s ease;
+}
+
+.nav-group-items li a:hover {
+  color: #013E37;   
+}
+
+/* Active link — current page */
+.nav-group-items li a.active {
+  color: #013E37;
+  font-weight: 600;
+}
+
+/* ── MAIN CONTENT ──────────────────────────────── */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  padding: 3rem 4rem;
+}
+
+.main h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+/* ── MAIN PAGE CONTENT ─────────────────────────── */
+.main h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #013E37;
+  margin-bottom: 2.5rem;
+}
+
+.intro-section {
+  margin-bottom: 2rem;
+  max-width: 680px;
+}
+
+.intro-section h2 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #013E37;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.intro-section p {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY PAGE STYLES
+══════════════════════════════════════════════ */
+
+.type-page-header {
+  margin-bottom: 2.5rem;
+}
+
+.type-page-header h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #013E37;
+  margin-bottom: 0.6rem;
+}
+
+.type-page-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #013E37;
+  margin-bottom: 0.3rem;
+}
+
+.type-page-header p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.type-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-top: 1px solid #ccc;
+}
+
+.type-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.type-lorem {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+  margin-top: 0.6rem;
+}
+
+.type-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.9;
+  color: #333;
+  padding-top: 0.5rem;
+}
+
+.specimen-h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 64px;
+  font-weight: 400;
+  font-style: italic;
+  color: #013E37;
+  line-height: 1.1;
+}
+
+.specimen-h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  color: #013E37;
+}
+
+.specimen-h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: #013E37;
+}
+
+.specimen-h4 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  color: #013E37;
+}
+
+.specimen-h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  color: #013E37;
+}
+
+.specimen-p1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: #1c1c1c;
+}
+
+.specimen-p2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: #1c1c1c;
+}
+
+.specimen-p3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: #1c1c1c;
+}
+
+.specimen-p4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  color: #1c1c1c;
+}
+
+/* ══════════════════════════════════════════════
+   COLOR PAGE STYLES
+══════════════════════════════════════════════ */
+
+.color-page-header {
+  margin-bottom: 2.5rem;
+}
+
+.color-page-header h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #013E37;
+}
+
+.color-section {
+  margin-bottom: 3rem;
+}
+
+.color-section-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #013E37;
+  margin-bottom: 1.5rem;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.color-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.color-swatch {
+  width: 100%;
+  height: 160px;
+}
+
+.color-info {
+  padding: 1rem 1.1rem 1.2rem 1.1rem;
+}
+
+.color-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  margin-bottom: 0.3rem;
+}
+
+.color-hex {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.color-uses {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════
+   LOGO PAGE STYLES
+══════════════════════════════════════════════ */
+
+.logo-page-header {
+  margin-bottom: 2.5rem;
+}
+
+.logo-page-header h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #013E37;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.logo-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.logo-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.logo-preview {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.logo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-info {
+  padding: 1rem 1.2rem 1.3rem 1.2rem;
+  border-top: 1px solid #eee;
+}
+
+.logo-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  margin-bottom: 0.4rem;
+}
+
+.logo-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+
+/* ══════════════════════════════════════════════
+   NAVBAR PAGE STYLES
+══════════════════════════════════════════════ */
+
+.component-page-header {
+  margin-bottom: 0.8rem;
+}
+
+.component-page-header h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #013E37;
+  margin-bottom: 0.8rem;
+}
+
+.component-page-header p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #013E37;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.example-box {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  background: #fff;
+}
+
+.code-box {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1.8rem 2rem;
+  overflow-x: auto;
+}
+
+.code-box pre {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.9;
+  color: #333;
+  margin: 0;
+  white-space: pre;
+}
+
+/* ── DEMO NAVBAR ───────────────────────────────── */
+.demo-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFF8DE;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.demo-navbar .nav-logo img {
+  height: 36px;
+  width: auto;
+}
+
+.demo-navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-navbar ul li a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.demo-navbar ul li a:hover {
+  color: #013E37;
+}
+
+.demo-navbar ul li a.nav-active {
+  color: #013E37;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.usage-box p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  color: #000000;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;  
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER PAGE STYLES
+══════════════════════════════════════════════ */
+
+.demo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #013E37;
+  padding: 2rem 2.5rem;
+  width: 100%;
+}
+
+.demo-footer .footer-copyright {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #FFF8DE;
+}
+
+.demo-footer .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.demo-footer .footer-connect-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #FFF8DE;
+}
+
+.demo-footer .footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.demo-footer .footer-icons a {
+  color: #FFF8DE;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.demo-footer .footer-icons a:hover {
+  color: #BEBBBB;
+}
+
+.demo-footer .footer-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFF8DE;
+  transition: fill 0.15s ease;
+}
+
+.demo-footer .footer-icons a:hover svg {
+  fill: #BEBBBB;
+}
+
+/* ══════════════════════════════════════════════
+   CARD PAGE STYLES
+══════════════════════════════════════════════ */
+
+.demo-card {
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.demo-card .card-image {
+  width: 100%;
+  height: 220px;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-card .card-image::before,
+.demo-card .card-image::after {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 1px;
+  background-color: #bbb;
+  top: 50%;
+  left: -20%;
+  transform-origin: center;
+}
+
+.demo-card .card-image::before {
+  transform: rotate(36deg);
+}
+
+.demo-card .card-image::after {
+  transform: rotate(-36deg);
+}
+
+.demo-card .card-body {
+  background-color: transparent !important;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+.demo-card .card-body-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.demo-card .card-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-style: normal;
+  color: #000000;
+  margin: 0;
+}
+
+.demo-card .card-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #000000;
+  margin: 0;
+}
+
+.demo-card .card-arrow {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   HOMEPAGE PAGE STYLES
+══════════════════════════════════════════════ */
+
+.tab-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.tab-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #333;
+  background: transparent;
+  border: none;
+  border-right: 1px solid #ccc;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab-btn:last-child {
+  border-right: none;
+}
+
+.tab-btn:hover {
+  background: #f0f0f0;
+}
+
+.tab-btn.active {
+  background: #fff;
+  font-weight: 500;
+  color: #013E37;
+}
+
+.preview-frame {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 500px;
+}
+
+.preview-frame img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typography — Sweater Weather Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/mini-design.css" />
+</head>
+<body>
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <nav class="sidebar">
+
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+      <img src="../images/logo.png" alt="Logo" class="logo-img">
+    </div>
+
+    <!-- FOUNDATIONS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Foundations
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="typography.html">Typography</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="logo.html">Logo</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPONENTS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Components
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="navbar.html">Navbar</a></li>
+        <li><a href="footer.html">Footer</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </div>
+
+    <!-- PAGE PATTERNS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Page Patterns
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main class="main">
+
+    <!-- Page Header -->
+    <div class="type-page-header">
+      <h1>Typography</h1>
+      <h2>Libre Baskerville &amp; Poppins</h2>
+      <p>Minor Third Scale | Base Size: 16px for screen size &lt; 1200px , 18px for screen size ≥ 1200px</p>
+    </div>
+
+    <!-- H1 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">H1</div>
+        <div class="specimen-h1">Heading 1</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Libre Baskerville', serif;<br>
+        font-size: 64px;<br>
+        font-weight: 400;<br>
+        font-style: italic;
+      </div>
+    </div>
+
+    <!-- H2 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">H2</div>
+        <div class="specimen-h2">Heading 2</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Poppins', sans-serif;<br>
+        font-size: 32px;<br>
+        font-weight: 400;<br>
+        font-style: normal;
+      </div>
+    </div>
+
+    <!-- H3 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">H3</div>
+        <div class="specimen-h3">Heading 3</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Poppins', sans-serif;<br>
+        font-size: 16px;<br>
+        font-weight: 400;<br>
+        font-style: normal;
+      </div>
+    </div>
+
+    <!-- H4 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">H4</div>
+        <div class="specimen-h4">Heading 4</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Libre Baskerville', serif;<br>
+        font-size: 24px;<br>
+        font-weight: 400;<br>
+        font-style: italic;
+      </div>
+    </div>
+
+    <!-- H5 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">H5</div>
+        <div class="specimen-h5">Heading 5</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Poppins', sans-serif;<br>
+        font-size: 24px;<br>
+        font-weight: 400;<br>
+        font-style: normal;
+      </div>
+    </div>
+
+    <!-- P1 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">P1</div>
+        <div class="specimen-p1">Primary Body Text</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Poppins', sans-serif;<br>
+        font-size: 16px;<br>
+        font-weight: 400;<br>
+        font-style: normal;
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">P2</div>
+        <div class="specimen-p2">Secondary Body Text</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Libre Baskerville', serif;<br>
+        font-size: 16px;<br>
+        font-weight: 400;<br>
+        font-style: italic;
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">P3</div>
+        <div class="specimen-p3">Body Text</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Poppins', sans-serif;<br>
+        font-size: 16px;<br>
+        font-weight: 400;<br>
+        font-style: normal;
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="type-row">
+      <div class="type-specimen">
+        <div class="type-label">P4</div>
+        <div class="specimen-p4">Small Text</div>
+        <p class="type-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut efficitur erat, at dapibus massa. Suspendisse scelerisque felis vitae ligula ullamcorper, id consequat lectus pharetra.</p>
+      </div>
+      <div class="type-code">
+        font-family: 'Poppins', sans-serif;<br>
+        font-size: 10px;<br>
+        font-weight: 400;<br>
+        font-style: normal;
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-group-items a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
+        groupToggle.classList.add('group-active');
+      }
+    });
+
+    function toggleGroup(toggleEl) {
+      const group = toggleEl.closest('.nav-group');
+      group.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

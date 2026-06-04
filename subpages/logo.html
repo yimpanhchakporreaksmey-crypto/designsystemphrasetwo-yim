@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logo — Sweater Weather Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/mini-design.css" />
+  <style>
+
+    /* ── LOGO PAGE HEADER ──────────────────────── */
+    .logo-page-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .logo-page-header h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #013E37;
+    }
+
+    /* ── LOGO GRID ─────────────────────────────── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── LOGO CARD ─────────────────────────────── */
+    .logo-card {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    /* Image display area */
+    .logo-preview {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Card text info */
+    .logo-info {
+      padding: 1rem 1.2rem 1.3rem 1.2rem;
+      border-top: 1px solid #eee;
+    }
+
+    .logo-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #1c1c1c;
+      margin-bottom: 0.4rem;
+    }
+
+    .logo-desc {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ── SECOND ROW — single card ──────────────── */
+    .logo-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <nav class="sidebar">
+
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+      <img src="../images/logo.png" alt="Logo" class="logo-img">
+    </div>
+
+    <!-- FOUNDATIONS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Foundations
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="typography.html">Typography</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="logo.html">Logo</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPONENTS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Components
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="navbar.html">Navbar</a></li>
+        <li><a href="footer.html">Footer</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </div>
+
+    <!-- PAGE PATTERNS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Page Patterns
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main class="main">
+
+    <div class="logo-page-header">
+      <h1>Logo Variations</h1>
+    </div>
+
+    <!-- TOP ROW — 3 cards -->
+    <div class="logo-grid">
+
+      <!-- Card 1: Color logo on light background -->
+      <div class="logo-card">
+        <div class="logo-preview" style="background-color: #FFF8DE;">
+        <img src="../images/logotext-green-yellow.png" alt="Color Logo" style="width: 100%; height: 100%; object-fit: contain;" />
+        </div>
+        <div class="logo-info">
+          <div class="logo-title">Color</div>
+          <div class="logo-desc">The color logo is the primary logo and should be used against light backgrounds.</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Logo on green background -->
+      <div class="logo-card">
+        <div class="logo-preview" style="background-color: #013E37;">
+        <img src="../images/logogreenbackground.png" alt="Inversed Logo" style="width: 100%; height: 100%; object-fit: contain;" />
+        </div>
+        <div class="logo-info">
+          <div class="logo-title">Color Inversed</div>
+          <div class="logo-desc">The color inversed logo should be used against dark backgrounds to ensure legibility.</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Logo on cream background (cropped/detail) -->
+      <div class="logo-card">
+        <div class="logo-preview" style="background-color: #FFF8DE;">
+        <img src="../images/background-black-yellow.png" alt="Grayscale Logo" style="width: 100%; height: 100%; object-fit: contain;" />
+        </div>
+        <div class="logo-info">
+          <div class="logo-title">Grayscale</div>
+          <div class="logo-desc">The grayscale logo should be used when printing in color is not an option.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW — 1 card -->
+    <div class="logo-grid-bottom">
+
+      <!-- Card 4: Icon only -->
+      <div class="logo-card">
+        <div class="logo-preview" style="background-color: #FFF8DE; padding: 2rem;">
+          <img src="../images/logo.png" alt="Icon Only Logo" style="object-fit: contain;" />
+        </div>
+        <div class="logo-info">
+          <div class="logo-title">Icon Only</div>
+          <div class="logo-desc">The icon only logo should be used in small spaces where the full logo does not fit.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-group-items a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
+        groupToggle.classList.add('group-active');
+      }
+    });
+
+    function toggleGroup(toggleEl) {
+      const group = toggleEl.closest('.nav-group');
+      group.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

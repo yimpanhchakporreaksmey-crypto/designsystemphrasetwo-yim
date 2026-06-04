@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Card — Sweater Weather Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/mini-design.css" />
+  <style>
+
+    /* ── PAGE HEADER ───────────────────────────── */
+    .component-page-header {
+      margin-bottom: 0.5rem;
+    }
+
+    .component-page-header h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #013E37;
+      margin-bottom: 0.5rem;
+    }
+
+    .component-page-header p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    /* ── SECTION TITLES ────────────────────────── */
+    .section-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #013E37;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── EXAMPLE BOX ───────────────────────────── */
+    .example-box {
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      background: transparent;
+      padding: 2rem;
+      display: flex;
+      justify-content: left;
+    }
+
+    /* ── DEMO CARD ─────────────────────────────── */
+    .demo-card {
+      width: 280px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Image placeholder */
+    .demo-card .card-image {
+      width: 100%;
+      height: 220px;
+      background-color: #f5f5f5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* X lines */
+    .demo-card .card-image::before,
+    .demo-card .card-image::after {
+      content: '';
+      position: absolute;
+      width: 140%;
+      height: 1px;
+      background-color: #bbb;
+      top: 50%;
+      left: -20%;
+      transform-origin: center;
+    }
+
+    .demo-card .card-image::before {
+      transform: rotate(36deg);
+    }
+
+    .demo-card .card-image::after {
+      transform: rotate(-36deg);
+    }
+
+    /* Card body — NO black background */
+    .demo-card .card-body {
+      background-color: transparent !important;
+      padding: 0.8rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+    }
+
+    .demo-card .card-body-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    /* Project Role — Poppins light black */
+    .demo-card .card-role {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      font-style: normal;
+      color: #000000;
+      margin: 0;
+    }
+
+    /* Project Title — Libre Baskerville italic black */
+    .demo-card .card-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #000000;
+      margin: 0;
+    }
+
+    /* Arrow icon */
+    .demo-card .card-arrow {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    /* ── CODE BOX ──────────────────────────────── */
+    .code-box {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1.8rem 2rem;
+      overflow-x: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    .code-box pre {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: #333;
+      margin: 0;
+      white-space: pre;
+    }
+
+    /* ── USAGE & ACCESSIBILITY ─────────────────── */
+    .usage-box {
+      margin-bottom: 2rem;
+    }
+
+    .usage-box p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      color: #000000;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <nav class="sidebar">
+
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+      <img src="../images/logo.png" alt="Logo" class="logo-img">
+    </div>
+
+    <!-- FOUNDATIONS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Foundations
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="typography.html">Typography</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="logo.html">Logo</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPONENTS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Components
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="navbar.html">Navbar</a></li>
+        <li><a href="footer.html">Footer</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </div>
+
+    <!-- PAGE PATTERNS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Page Patterns
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main class="main">
+
+    <!-- Page Header -->
+    <div class="component-page-header">
+      <h1>Card</h1>
+      <p>Cards are used to display project previews and content in a structured layout.</p>
+    </div>
+
+    <!-- Example Section -->
+    <div class="section-title">Example</div>
+    <div class="example-box">
+      <div class="demo-card">
+        <div class="card-image"></div>
+        <div class="card-body">
+          <div class="card-body-left">
+            <p class="card-role">Project Role</p>
+            <p class="card-title">Project Title</p>
+          </div>
+          <div class="card-body-right">
+            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Section -->
+    <div class="section-title">Code</div>
+    <div class="code-box">
+      <pre>
+&lt;div class="demo-card"&gt;
+  &lt;div class="card-image"&gt;
+    &lt;img src="your-image.jpg" alt="Project preview" /&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;div class="card-body-left"&gt;
+      &lt;p class="card-role"&gt;Project Role&lt;/p&gt;
+      &lt;p class="card-title"&gt;Project Title&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body-right"&gt;
+      &lt;svg class="card-arrow" ...&gt;...&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.demo-card {
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.demo-card .card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.demo-card .card-body {
+  background-color: transparent;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+.demo-card .card-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #000000;
+}
+
+.demo-card .card-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #000000;
+}
+
+.demo-card .card-arrow {
+  width: 20px;
+  height: 20px;
+}
+      </pre>
+    </div>
+
+    <!-- Usage Section -->
+    <div class="section-title">Usage</div>
+    <div class="usage-box">
+      <p>Cards are used to display project previews on the homepage and portfolio pages.</p>
+      <p>Each card contains an image area on top and a label area on the bottom.</p>
+      <p>Cards should maintain consistent sizing across the layout.</p>
+    </div>
+
+    <!-- Accessibility Section -->
+    <div class="section-title">Accessibility Considerations</div>
+    <div class="usage-box">
+      <p>All card images should include descriptive alt text for screen readers. The card body uses high contrast black text on a white background for readability.</p>
+    </div>
+
+  </main>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-group-items a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
+        groupToggle.classList.add('group-active');
+      }
+    });
+
+    function toggleGroup(toggleEl) {
+      const group = toggleEl.closest('.nav-group');
+      group.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

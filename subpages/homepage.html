@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homepage — Sweater Weather Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/mini-design.css" />
+  <style>
+
+    /* ── PAGE HEADER ───────────────────────────── */
+    .component-page-header {
+      margin-bottom: 1rem;
+    }
+
+    .component-page-header h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #013E37;
+      margin-bottom: 0.3rem;
+    }
+
+    .component-page-header p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    /* ── TABS ──────────────────────────────────── */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+      width: fit-content;
+    }
+
+    .tab-btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #333;
+      background: transparent;
+      border: none;
+      border-right: 1px solid #ccc;
+      padding: 0.55rem 1.1rem;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .tab-btn:last-child {
+      border-right: none;
+    }
+
+    .tab-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .tab-btn.active {
+      background: #fff;
+      font-weight: 500;
+      color: #013E37;
+    }
+
+    /* ── PREVIEW FRAME ─────────────────────────── */
+    .preview-frame {
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+    }
+
+    .preview-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hide all tab panels by default */
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <nav class="sidebar">
+
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+      <img src="../images/logo.png" alt="Logo" class="logo-img">
+    </div>
+
+    <!-- FOUNDATIONS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Foundations
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="typography.html">Typography</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="logo.html">Logo</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPONENTS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Components
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="navbar.html">Navbar</a></li>
+        <li><a href="footer.html">Footer</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </div>
+
+    <!-- PAGE PATTERNS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Page Patterns
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main class="main">
+
+    <!-- Page Header -->
+    <div class="component-page-header">
+      <h1>Homepage</h1>
+      <p>Desktop - 1280px</p>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab(this, 'web-design')">Web-design</button>
+      <button class="tab-btn" onclick="switchTab(this, 'web-grid')">Web-grid</button>
+      <button class="tab-btn" onclick="switchTab(this, 'tablet-design')">Tablet-design</button>
+      <button class="tab-btn" onclick="switchTab(this, 'tablet-grid')">Tablet-grid</button>
+      <button class="tab-btn" onclick="switchTab(this, 'phone-design')">Phone-design</button>
+      <button class="tab-btn" onclick="switchTab(this, 'phone-grid')">Phone-grid</button>
+    </div>
+
+    <!-- Web Design Tab -->
+    <div class="preview-frame tab-panel active" id="web-design">
+      <!-- REPLACE filename below with your actual image name -->
+      <img src="../images/Homepage-Desktop 1280.png" alt="Homepage Desktop Design" />
+    </div>
+
+    <!-- Web Grid Tab -->
+    <div class="preview-frame tab-panel" id="web-grid">
+      <!-- REPLACE filename below with your actual image name -->
+      <img src="../images/Homepage-Desktop-grid.png" alt="Homepage Web Grid" />
+    </div>
+
+    <!-- Tablet Design Tab -->
+    <div class="preview-frame tab-panel" id="tablet-design">
+      <img src="../images/Homepage-Tablet 834.png" alt="Homepage Tablet Design" />
+    </div>
+
+    <!-- Tablet Grid Tab -->
+    <div class="preview-frame tab-panel" id="tablet-grid">
+      <img src="../images/Homepage-Tablet-grid.png" alt="Homepage Tablet Grid" />
+    </div>
+
+    <!-- Phone Design Tab -->
+    <div class="preview-frame tab-panel" id="phone-design">
+      <img src="../images/Homepage-Mobile 402.png" alt="Homepage Phone Design" />
+    </div>
+
+    <!-- Phone Grid Tab -->
+    <div class="preview-frame tab-panel" id="phone-grid">
+      <img src="../images/Homepage-Mobile-grid.png" alt="Homepage Phone Grid" />
+    </div>
+
+  </main>
+
+  <script>
+    /* ── Auto highlight nav ─────────────────── */
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-group-items a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
+        groupToggle.classList.add('group-active');
+      }
+    });
+
+    function toggleGroup(toggleEl) {
+      const group = toggleEl.closest('.nav-group');
+      group.classList.toggle('open');
+    }
+
+    /* ── Tab switching ──────────────────────── */
+    function switchTab(btn, panelId) {
+      // Remove active from all buttons
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      // Remove active from all panels
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      // Set active on clicked button and matching panel
+      btn.classList.add('active');
+      document.getElementById(panelId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

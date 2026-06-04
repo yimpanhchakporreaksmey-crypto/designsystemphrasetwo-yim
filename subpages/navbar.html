@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navbar — Sweater Weather Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/mini-design.css" />
+  <style>
+
+    /* ── PAGE HEADER ───────────────────────────── */
+    .component-page-header {
+      margin-bottom: 0.5rem;
+    }
+
+    .component-page-header h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #013E37;
+      margin-bottom: 0.5rem;
+    }
+
+    .component-page-header p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    /* ── SECTION TITLES (Example, Code) ────────── */
+    .section-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #013E37;
+      margin-bottom: 1rem;
+    }
+
+    /* ── EXAMPLE BOX ───────────────────────────── */
+    .example-box {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      background: #fff;
+    }
+
+    /* ── ACTUAL NAVBAR BEING DEMONSTRATED ──────── */
+    .demo-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #FFF8DE;
+      padding: 1rem 2rem;
+      width: 100%;
+    }
+
+    .demo-navbar .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .demo-navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .demo-navbar ul li a {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .demo-navbar ul li a:hover {
+      color: #013E37;
+    }
+
+    .demo-navbar ul li a.nav-active {
+      color: #013E37;
+      text-decoration: underline;
+      text-underline-offset: 0.3rem;
+    }
+
+    /* ── CODE BOX ──────────────────────────────── */
+    .code-box {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1.8rem 2rem;
+      overflow-x: auto;
+    }
+
+    .code-box pre {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: #333;
+      margin: 0;
+      white-space: pre;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <nav class="sidebar">
+
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+      <img src="../images/logo.png" alt="Logo" class="logo-img">
+    </div>
+
+    <!-- FOUNDATIONS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Foundations
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="typography.html">Typography</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="logo.html">Logo</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPONENTS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Components
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="navbar.html">Navbar</a></li>
+        <li><a href="footer.html">Footer</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </div>
+
+    <!-- PAGE PATTERNS -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Page Patterns
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main class="main">
+
+    <!-- Page Header -->
+    <div class="component-page-header">
+      <h1>Navigation Bar</h1>
+      <p>The navigation bar allows users to navigate through the website.</p>
+    </div>
+
+    <!-- Example Section -->
+    <div class="section-title">Example</div>
+    <div class="example-box">
+      <nav class="demo-navbar">
+        <div class="nav-logo">
+          <img src="../images/logo.png" alt="Logo" />
+        </div>
+        <ul>
+          <li><a href="#" class="nav-active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Code Section -->
+    <div class="section-title">Code</div>
+    <div class="code-box">
+      <pre>
+&lt;nav class="demo-navbar"&gt;
+  &lt;div class="nav-logo"&gt;
+    &lt;img src="../images/your-logo.png" alt="Logo" /&gt;
+  &lt;/div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" class="nav-active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="resume.html"&gt;Resume&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+
+      </pre>
+    </div>
+
+    <!-- usage Section -->
+    <div class="section-title">Usage</div>
+    <div>
+      
+    
+    <p>Navigation bars are used to provide easy access to different sections of a website.</p>
+    <p>Navigation bars are used on the topview or side of a webpage.</p>
+    <p>Navigation bars should be consistent throughout the site.</p>
+
+    </div>
+
+    <!-- Accessibility Considerations  Section -->
+    <div class="section-title">Accessibility Considerations</div>
+    <div>
+      
+    <p>The navigation bar is an essential element for providing a good user experience and ensuring accessibility. The navigatiob bar provides clear labels with a dark color schemefor each navigation item and transparency of a light color background.</p>
+    
+    </div>
+
+  </main>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-group-items a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
+        groupToggle.classList.add('group-active');
+      }
+    });
+
+    function toggleGroup(toggleEl) {
+      const group = toggleEl.closest('.nav-group');
+      group.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

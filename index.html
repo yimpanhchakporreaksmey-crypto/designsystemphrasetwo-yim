@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asato's Portfolio Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/mini-design.css" />
+  <li><a href="subpages/typography.html" class="active">Typography</a></li>
+</head>
+<body>
+
+  <nav class="sidebar">
+
+    <!-- ── LOGO ────────────────────────────────────────────────────── -->
+    <!-- TO USE YOUR OWN IMAGE: delete the <svg> block below and       -->
+    <!-- uncomment the <img> line, then update the src path            -->
+    <!-- <img src="images/your-logo.png" alt="Logo" class="logo-img"> -->
+    <div class="sidebar-logo">
+      <img src="images/logo.png" alt="Logo" class="logo-img">
+    </div>
+        <circle cx="72" cy="56" r="7" fill="#b85c38"/>
+      </svg>
+    </div>
+
+    <!-- ── FOUNDATIONS GROUP ───────────────────────────────────────── -->
+    <!-- Add class="active" to the <a> that matches the current page   -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Foundations
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="subpages/typography.html" class="active">Typography</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="logo.html">Logo</a></li>
+      </ul>
+    </div>
+
+    <!-- ── COMPONENTS GROUP ────────────────────────────────────────── -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Components
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="navbar.html">Navbar</a></li>
+        <li><a href="footer.html">Footer</a></li>
+        <li><a href="card.html">Card</a></li>
+      </ul>
+    </div>
+
+    <!-- ── PAGE PATTERNS GROUP ─────────────────────────────────────── -->
+    <div class="nav-group open">
+      <div class="nav-group-toggle" onclick="toggleGroup(this)">
+        <span class="chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Page Patterns
+      </div>
+      <ul class="nav-group-items">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main class="main">
+
+    <h1>Lj Portfolio Design System</h1>
+
+    <section class="intro-section">
+      <h2>About</h2>
+      <p>Documentation for the design system I created for my portfolio is available on this website. In order to demonstrate the design system and highlight my personality and design experience, I created the website.</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>Foundations</h2>
+      <p>This section covers the design foundations for the design system, including typographical hierarchy, color palette, and logo variations.</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>Components</h2>
+      <p>This section covers reusable components needed to build the portfolio website, including navigation bars, footers, and cards.</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>Page Patterns</h2>
+      <p>This section provides visual guidelines for three views of a homepage and an aboutpage of my portfoli.</p>
+    </section>
+
+  </main>
+
+  <script>
+    // Auto-highlights the nav link that matches the current page filename
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-group-items a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+
+        // Also bold the parent group label when a child is active
+        const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
+        groupToggle.classList.add('group-active');
+      }
+    });
+
+    function toggleGroup(toggleEl) {
+      const group = toggleEl.closest('.nav-group');
+      group.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
