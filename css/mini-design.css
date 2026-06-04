@@ -48,6 +48,12 @@ body {
 .sidebar-logo a {
   display: block;
   cursor: pointer;
+  text-decoration: none;
+}
+.logo-img {
+  width: 72px;
+  height: auto;
+  display: block;
 }
 /* SVG logo sizing */
 .logo-svg {
