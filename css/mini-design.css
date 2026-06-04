@@ -45,7 +45,10 @@ body {
 .sidebar-logo {
   padding: 0 1.4rem 1.8rem 1.4rem;
 }
-
+.sidebar-logo a {
+  display: block;
+  cursor: pointer;
+}
 /* SVG logo sizing */
 .logo-svg {
   width: 72px;
