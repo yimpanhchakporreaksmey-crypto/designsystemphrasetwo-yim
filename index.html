@@ -3,30 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Asato's Portfolio Design System</title>
+  <title>Lj Portfolio Design System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/mini-design.css" />
-  <li><a href="subpages/typography.html" class="active">Typography</a></li>
 </head>
 <body>
 
   <nav class="sidebar">
 
-    <!-- ── LOGO ────────────────────────────────────────────────────── -->
-    <!-- TO USE YOUR OWN IMAGE: delete the <svg> block below and       -->
-    <!-- uncomment the <img> line, then update the src path            -->
-    <!-- <img src="images/your-logo.png" alt="Logo" class="logo-img"> -->
+    <!-- LOGO -->
     <div class="sidebar-logo">
       <img src="images/logo.png" alt="Logo" class="logo-img">
     </div>
-        <circle cx="72" cy="56" r="7" fill="#b85c38"/>
-      </svg>
-    </div>
 
-    <!-- ── FOUNDATIONS GROUP ───────────────────────────────────────── -->
-    <!-- Add class="active" to the <a> that matches the current page   -->
+    <!-- FOUNDATIONS -->
     <div class="nav-group open">
       <div class="nav-group-toggle" onclick="toggleGroup(this)">
         <span class="chevron">
@@ -37,13 +29,13 @@
         Foundations
       </div>
       <ul class="nav-group-items">
-        <li><a href="subpages/typography.html" class="active">Typography</a></li>
-        <li><a href="color.html">Color</a></li>
-        <li><a href="logo.html">Logo</a></li>
+        <li><a href="subpages/typography.html">Typography</a></li>
+        <li><a href="subpages/color.html">Color</a></li>
+        <li><a href="subpages/logo.html">Logo</a></li>
       </ul>
     </div>
 
-    <!-- ── COMPONENTS GROUP ────────────────────────────────────────── -->
+    <!-- COMPONENTS -->
     <div class="nav-group open">
       <div class="nav-group-toggle" onclick="toggleGroup(this)">
         <span class="chevron">
@@ -54,13 +46,13 @@
         Components
       </div>
       <ul class="nav-group-items">
-        <li><a href="navbar.html">Navbar</a></li>
-        <li><a href="footer.html">Footer</a></li>
-        <li><a href="card.html">Card</a></li>
+        <li><a href="subpages/navbar.html">Navbar</a></li>
+        <li><a href="subpages/footer.html">Footer</a></li>
+        <li><a href="subpages/card.html">Card</a></li>
       </ul>
     </div>
 
-    <!-- ── PAGE PATTERNS GROUP ─────────────────────────────────────── -->
+    <!-- PAGE PATTERNS -->
     <div class="nav-group open">
       <div class="nav-group-toggle" onclick="toggleGroup(this)">
         <span class="chevron">
@@ -71,14 +63,14 @@
         Page Patterns
       </div>
       <ul class="nav-group-items">
-        <li><a href="homepage.html">Homepage</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="subpages/homepage.html">Homepage</a></li>
+        <li><a href="subpages/about.html">About</a></li>
       </ul>
     </div>
 
   </nav>
 
-  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <!-- MAIN CONTENT -->
   <main class="main">
 
     <h1>Lj Portfolio Design System</h1>
@@ -100,20 +92,17 @@
 
     <section class="intro-section">
       <h2>Page Patterns</h2>
-      <p>This section provides visual guidelines for three views of a homepage and an aboutpage of my portfoli.</p>
+      <p>This section provides visual guidelines for three views of a homepage and an about page of my portfolio.</p>
     </section>
 
   </main>
 
   <script>
-    // Auto-highlights the nav link that matches the current page filename
     const currentPage = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-group-items a').forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
-
-        // Also bold the parent group label when a child is active
         const groupToggle = link.closest('.nav-group').querySelector('.nav-group-toggle');
         groupToggle.classList.add('group-active');
       }
